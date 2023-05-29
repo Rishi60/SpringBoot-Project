@@ -1,0 +1,47 @@
+<div class="header">
+    <br>
+    <h2>List of all Surveys</h2>
+    <br>
+    <a routerLink="/survey-form" routerLinkActive="active">Click here for survey form</a>
+</div>
+
+<div class="survey-table">
+    <table id="customers">
+        <thead>
+            <th>First Name</th>
+            <th>Lastt Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>ZIP</th>
+            <th>Telephone</th>
+            <th>Email</th>
+            <th>Date of Survey</th>
+            <th>Most Liked</th>
+            <th>Interest Uni</th>
+            <th>Recommendation</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of surveys">
+                <td>{{x.firstName}}</td>
+                <td>{{x.lastName}}</td>
+                <td>{{x.address}}</td>
+                <td>{{x.city}}</td>
+                <td>{{x.state}}</td>
+                <td>{{x.zip}}</td>
+                <td>{{x.telephone}}</td>
+                <td>{{x.email}}</td>
+                <td>{{x.dateOfSurvey}}</td>
+                <td>
+                    <ul>
+                        <li *ngFor="let y of x.mostLiked">
+                        <p>{{y}}</p>
+                        </li>
+                    </ul>
+                </td>
+                <td>{{x.intrestInUni}}</td>
+                <td>{{x.recommendUni}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

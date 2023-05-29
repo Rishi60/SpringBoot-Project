@@ -1,0 +1,232 @@
+<style>
+	.form-div {
+		margin-left: 250px !important;
+		width: 800px !important;
+		border: 1px solid #c3c3c3;
+		align-content: center;
+	}
+
+	.heading-form {
+		text-align: center;
+	}
+	
+	.buttons {
+		align-content: center;
+		margin-left: 300px;
+	}
+	
+	.submit-button {
+		align-content: center;
+		background-color: red;
+	}
+	
+	.cancel-button {
+		
+	}
+	
+	.dropdown-school {
+		max-width: 400px;
+	}
+	
+	.calendar-form {
+		max-width: 400px;
+		margin-left: 10px;
+	}
+	
+	.req {
+		color:red;
+	}
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	    var elems = document.querySelectorAll('.dropdown-trigger');
+	    // var instances = M.Dropdown.init(elems, options);
+	  });
+	
+	  // Or with jQuery
+</script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<body>
+
+	<!-- <form #userName="ngForm" (ngSubmit)="onClickSubmit(userName.value)"> 
+		<input type="text" name="username" placeholder="username" ngModel> 
+		<br/> 
+		<br/> 
+		<input type="submit" value="submit"> 
+	 </form> -->
+	<div class="form-div">
+		<a routerLink="/survey-details" routerLinkActive="active">Click here for details</a>
+		<h4 class="heading-form">Student survey form</h4>
+		<div class="row">
+	    <form class="col s12" #userName="ngForm" (ngSubmit)="onClickSubmit(userName.value)">
+	      <div class="row">
+	        <div class="input-field col s6">
+	          <input id="first_name" type="text" name="firstName" class="validate" ngModel>
+	          <label for="first_name">First Name</label>
+	          <span class="helper-text" data-error="wrong" data-success="right">*required</span>
+	        </div>
+	        <div class="input-field col s6">
+	          <input id="last_name" type="text" name="lastName" class="validate" ngModel>
+	          <label for="last_name">Last Name</label>
+	          <span class="helper-text" data-error="wrong" data-success="right">*required</span>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="input-field col s6">
+	          <input id="address" type="text" name="address" class="validate" ngModel>
+	          <label for="address">Street Address</label>
+	          <span class="helper-text" data-error="wrong" data-success="right">*required</span>
+	        </div>
+	        <div class="input-field col s6">
+	          <input id="city" type="text" name="city" class="validate" ngModel>
+	          <label for="city">City</label>
+	          <span class="helper-text" data-error="wrong" data-success="right">*required</span>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="input-field col s6">
+	          <input id="state" type="text" name="state" class="validate" ngModel>
+	          <label for="state">State</label>
+	          <span class="helper-text" data-error="wrong" data-success="right">*required</span>
+	        </div>
+	        <div class="input-field col s6">
+	          <input id="zip" type="text" name="zip" class="validate" ngModel>
+	          <label for="zip">ZIP</label>
+	          <span class="helper-text" data-error="wrong" data-success="right">*required</span>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <input id="telephone" type="tel" name="telephone" class="validate" ngModel>
+	          <label for="telephone">Mobile</label>
+	          <span class="helper-text" data-error="wrong" data-success="right">*required</span>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <input id="email" type="email" name="email" class="validate" ngModel>
+	          <label for="email">Email</label>
+	          <span class="helper-text" data-error="wrong" data-success="right">*required</span>
+	        </div>
+	      </div>
+	       <div class = "row">
+		       	<div class="calendar-form">
+		               <label>Date of survey</label>             
+		               <input type = "date" class = "datepicker" name="dateOfSurvey" ngModel/>                    
+	      		</div>
+      		</div>
+	      <div>
+	        What do you like the most ?
+	      	<p>
+		      <label>
+		        <input type="checkbox" class="filled-in" name="students" ngModel/>
+		        <span>Students</span>
+		      </label>
+		    </p>
+		    <p>
+		      <label>
+		        <input type="checkbox" class="filled-in" name="location" ngModel/>
+		        <span>Location</span>
+		      </label>
+		    </p>
+		    <p>
+		      <label>
+		        <input type="checkbox" class="filled-in" name="campus" ngModel/>
+		        <span>Campus</span>
+		      </label>
+		    </p>
+		    <p>
+		      <label>
+		        <input type="checkbox" class="filled-in" name="atmosphere" ngModel/>
+		        <span>Atmosphere</span>
+		      </label>
+		    </p>
+		    <p>
+		      <label>
+		        <input type="checkbox" class="filled-in" name="dormRooms" ngModel/>
+		        <span>Dorm Rooms</span>
+		      </label>
+		    </p>
+		    <p>
+		      <label>
+		        <input type="checkbox" class="filled-in" name="sports" ngModel/>
+		        <span>Sports</span>
+		      </label>
+		    </p>
+	      </div>
+	      <br>
+	      <div>
+	      	How you became interested in school ?
+			<fieldset>
+	      	<p>
+		      <label>
+		        <input class="with-gap" type="radio" name="intrestInUni" value="friends" ngModel/>
+		        <span>Friends</span>
+		      </label>
+		    </p>
+		    <p>
+		      <label>
+		        <input class="with-gap" type="radio" name="intrestInUni" value="television" ngModel/>
+		        <span>Television</span>
+		      </label>
+		    </p>
+    		<p>
+		      <label>
+		        <input class="with-gap" type="radio" name="intrestInUni" value="internet" ngModel/>
+		        <span>Internet</span>
+		      </label>
+		    </p>
+		    <p>
+		      <label>
+		        <input class="with-gap" type="radio" name="intrestInUni" value="other" ngModel/>
+		        <span>Other</span>
+		      </label>
+		    </p>
+		 </fieldset>
+	      </div>
+	      <br>
+		  <br>
+	      <div class="dropdown-school">
+	      	 How much you can recommend school to other students ?
+	      	 <br>
+	      	  <label>Browser Select</label>
+			  <select class="browser-default" name="recommendUni" ngModel>
+			    <option value="" disabled selected>Choose your option</option>
+			    <option value="3">Very likely</option>
+			    <option value="2">Likely</option>
+			    <option value="1">Unlikely</option>
+			  </select>
+	      </div>
+	    <div class="row">
+	        
+	          <div class="input-field inline">
+	            <input id="email_inline" type="email" class="validate" name="raffle" ngModel>
+	            <label for="email_inline">Raffle</label>
+	            <span class="helper-text" data-error="wrong" data-success="right">Enter ten coma separated values ranging from 0-100</span>
+	          </div>
+	      </div>
+	      <div class="row">
+		    <div class="col s12">
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <textarea id="textarea1" class="materialize-textarea" name="comments" ngModel></textarea>
+		          <label for="textarea1">Additional comments</label>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		
+	      <div class="buttons">
+	     	 <br><br>
+		     <button class="btn waves-effect waves-light" type="submit" name="action" value="submit">Submit
+	    		<i class="material-icons right">send</i>
+	 		 </button>
+	 		 	<a class="waves-effect waves-light btn">Cancel</a>
+ 		  </div>
+		</form>
+		  
+	  </div>
+  </div>
